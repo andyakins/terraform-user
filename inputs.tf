@@ -1,5 +1,5 @@
 variable "path" {
-  default = "/chivalrousdev/"
+  default = "/"
   description = ""
   type = string
 }
