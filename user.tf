@@ -14,3 +14,8 @@ resource "aws_iam_policy" "TerraformBuilderPolicy" {
 
   policy = file("${path.root}/terraform_builder_policy.json")
 }
+
+resource "aws_iam_user_policy_attachment" "TerraformBuilderPolicyAttachment" {
+  user       = aws_iam_user.TerraformBuilder.name
+  policy_arn = aws_iam_policy.TerraformBuilderPolicy.arn
+}
